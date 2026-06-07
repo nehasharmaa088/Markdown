@@ -359,3 +359,101 @@ Okay.
 ---
 
 Happy Scripting! 🚀🐧
+
+# Table of Contents
+
+- What is Bash?
+- Variables
+- User Input
+- Conditions
+- Loops
+- Functions
+- Arrays
+- Case Statements
+- File Operations
+- Cron Jobs
+- Best Practices
+
+---
+
+# Bash Script Safety
+
+Use these options in production scripts:
+
+```bash
+#!/bin/bash
+set -euo pipefail
+```
+- `-e` Exit on errors
+- `-u` Treat undefined variables as errors
+- `pipefail` Detect pipeline failures
+
+---
+
+# Arrays
+
+```bash
+fruits=("apple" "banana" "orange")
+
+echo "${fruits[0]}"
+echo "${fruits[@]}"
+```
+
+Output:
+
+```text
+apple
+apple banana orange
+```
+
+---
+
+# Case Statements
+
+```bash
+read choice
+case $choice in
+  start)
+    echo "Starting service..."
+    ;;
+  stop)
+    echo "Stopping service..."
+    ;;
+  *)
+    echo "Invalid option"
+    ;;
+esac
+```
+
+---
+
+# Cron Jobs
+Schedule a script to run every day at midnight:
+
+```bash
+0 0 * * * /home/user/backup.sh
+```
+
+Edit cron jobs:
+
+```bash
+crontab -e
+```
+
+---
+cp -r "$SOURCE" "$DEST"
+if cp -r "$SOURCE" "$DEST"; then
+     echo "Backup completed successfully!"
+ else
+     echo "Backup failed!"
+     exit 1
+ fi
+
+---
+
+# Useful Resources
+
+- Bash Manual
+- Linux Documentation Project
+- ShellCheck
+- ExplainShell
